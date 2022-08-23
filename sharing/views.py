@@ -1,10 +1,10 @@
-from django.shortcuts import render
-from django.views.generic import ListView
-from .models import SharingList
+from django.views.generic import ListView, DetailView
+from .models import Post, Photo
 
 # Create your views here.
-def index(request) :
-  return render(
-    request,
-    'sharing/index.html',
-  )
+class PostList(ListView) :
+  model = Post
+  ordering = '-pk'
+
+class PostDetail(DetailView) :
+  model = Post

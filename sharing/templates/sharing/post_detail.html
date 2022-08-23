@@ -1,0 +1,62 @@
+{% extends 'MainRefrigerator/base.html' %}
+{% block main_area %}
+{% load static %}
+        <!-- Share -->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="share-info-div">
+                        <div class="share-info-image">
+                            <h2>{{ post.title }}</h2>
+                            <span class="share-card__status">
+                                <img class="share-card__placeholder" src="{% static 'assets/img/share/placeholder.png' %}"/>흥업사거리</span>
+                                <br><span class="share-card__status">{{ post.created_at }}</span>
+                                <div class="share-card__description">
+                                    <span class="share-card__description-me">#포도</span>
+                                    <span class="share-card__description-you">#대파</span>
+                                  </div>
+                                <hr>
+                                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                  <div class="carousel-item active">
+                                    <img src="{{ post.head_image.url }}" class="d-block w-100" alt="...">
+                                  </div>
+                                  <div class="carousel-item">
+                                    <img src="{% static 'assets/img/share/2.jpg' %}" class="d-block w-100" alt="...">
+                                  </div>
+                                  <div class="carousel-item">
+                                    <img src="{% static 'assets/img/share/3.jpg' %}" class="d-block w-100" alt="...">
+                                  </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                  <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                  <span class="visually-hidden">Next</span>
+                                </button>
+                              </div>
+                        </div>
+                        <div class="share-info-text">
+                            <p>{{ post.content }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Footer-->
+        <footer class="bg-light py-5">
+            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">
+                Copyright &copy; 2022 - JCK<br>
+                <a class="icon-source" href="https://www.flaticon.com/free-icons/login" title="login icons">Login icons created by Pixel perfect - Flaticon</a><br>
+                <a class="icon-source" href="https://www.flaticon.com/free-icons/signup" title="signup icons">Signup icons created by Smashicons - Flaticon</a><br>
+                <a href="https://www.flaticon.com/free-icons/pin" title="pin icons">Pin icons created by Freepik - Flaticon</a>
+            </div>
+        </div>
+{% endblock %}

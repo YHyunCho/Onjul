@@ -1,5 +1,11 @@
 from django.contrib import admin
-from .models import SharingList
+from .models import Post, Photo
 
 # Register your models here.
-admin.site.register(SharingList)
+class PhotoInline(admin.TabularInline) :
+  model = Photo
+
+class PostAdmin(admin.ModelAdmin) :
+  inlines = [PhotoInline, ]
+
+admin.site.register(Post, PostAdmin)
