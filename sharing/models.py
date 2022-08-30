@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+import os
 
 # Create your models here.
 
@@ -9,9 +11,11 @@ class Post(models.Model) :
   head_image = models.ImageField(upload_to='sharing/image/%Y/%m/%d', blank=True)
   created_at = models.DateTimeField(auto_now_add=True)  # 작성시간 저장
   updated_at = models.DateTimeField(auto_now=True)      # 수정시간 저장
+  
+  author = models.ForeignKey(User, on_delete=models.CASCADE)
 
   def __str__(self):
-    return f'[{self.pk}]{self.title}' # 리스트에서 포스트 제목 나타나게 하기
+    return f'[{self.pk}]{self.title} :: {self.author}' # 리스트에서 포스트 제목 나타나게 하기
 
   def get_absolute_url(self):
     return f'/sharing/{self.pk}/'

@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'Account',
     'MainRefrigerator',
     'sharing',
+    'taggit.apps.TaggitAppConfig',
+    'taggit_templatetags2',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +138,7 @@ LOGOUT_REDIRECT_URL = '/index/'
 # 이미지 폴더 지정하기
 MEDIA_URL = '/media/'
 MIDEA_ROOT = os.path.join(BASE_DIR, '_media')
+
+# 태그
+TAGGIT_CASE_INSENSITIVE = True
+TAGGIT_LIMIT = 50   
