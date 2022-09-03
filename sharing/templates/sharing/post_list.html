@@ -25,162 +25,17 @@
                                 </div>
                               </div>
                               <div class="share-card__description">
-                                <span class="share-card__description-me">#감자</span>
+                                {% if p.tags.exists %}
+                                  {% for tag in p.tags.iterator %}
+                                      <span class="share-card__description-me">{{ tag }}</span>
+                                  {% endfor %}
+                                {% endif %}
                                 <span class="share-card__description-you">#대파</span>
                               </div>
                             </div>
                           </a>      
                         </li>
                         {% endfor %}
-                        <!-- <li>
-                          <a href="" class="share-card">
-                            <img src="{% static 'assets/img/share/2.jpg' %}" class="share-card__image" alt="" />
-                            <div class="share-card__overlay">        
-                              <div class="share-card__header">
-                                <svg class="share-card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
-                                <img class="share-card__thumb" src="{% static 'assets/img/share/boy.png' %}" alt="" />                       
-                                <div class="share-card__header-text">
-                                  <h3 class="share-card__title">나 대파, 너 배추</h3>
-                                  <span class="share-card__status">
-                                    <img class="share-card__placeholder" src="{% static 'assets/img/share/placeholder.png' %}"/>흥업사거리</span>
-                                  </span>
-                                </div>
-                              </div>
-                              <div class="share-card__description">
-                                <span class="share-card__description-me">#대파</span>
-                                <span class="share-card__description-you">#배추</span>
-                              </div>
-                            </div>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="" class="share-card">
-                            <img src="{% static 'assets/img/share/3.jpg' %}" class="share-card__image" alt="" />
-                            <div class="share-card__overlay">
-                              <div class="share-card__header">
-                                <svg class="share-card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
-                                <img class="share-card__thumb" src="{% static 'assets/img/share/girl.png' %}" alt="" />                           
-                                <div class="share-card__header-text">
-                                  <h3 class="share-card__title">감자 필요해요!</h3>
-                                  <span class="card__tagline">Lorem ipsum dolor sit amet consectetur</span>            
-                                  <span class="share-card__status">
-                                    <img class="share-card__placeholder" src="{% static 'assets/img/share/placeholder.png' %}"/>흥업사거리</span>
-                                  </span>
-                                </div>
-                              </div>
-                              <div class="share-card__description">
-                                <span class="share-card__description-me">#고구마</span>
-                                <span class="share-card__description-you">#감자</span>
-                              </div>
-                            </div>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="" class="share-card">
-                            <img src="{% static 'assets/img/share/8.jpg' %}" class="share-card__image" alt="" />
-                            <div class="share-card__overlay">
-                              <div class="share-card__header">
-                                <svg class="share-card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
-                                <img class="share-card__thumb" src="{% static 'assets/img/share/girl.png' %}" alt="" />                       
-                                <div class="share-card__header-text">
-                                  <h3 class="share-card__title">내공 냠냠</h3>
-                                  <span class="share-card__status">
-                                    <img class="share-card__placeholder" src="{% static 'assets/img/share/placeholder.png' %}"/>흥업사거리</span>
-                                  </span>
-                                </div>          
-                              </div>
-                              <div class="share-card__description">
-                                <span class="share-card__description-me">#사과</span>
-                                <span class="share-card__description-you">#오렌지</span>
-                              </div>
-                            </div>
-                          </a>
-                        </li>
-                        <li>
-                            <a href="" class="share-card">
-                              <img src="{% static 'assets/img/share/5.jpg' %}" class="share-card__image" alt="" />
-                              <div class="share-card__overlay">
-                                <div class="share-card__header">
-                                  <svg class="share-card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
-                                  <img class="share-card__thumb" src="{% static 'assets/img/share/boy.png' %}" alt="" />                       
-                                  <div class="share-card__header-text">
-                                    <h3 class="share-card__title">맛있는 블루베리 사세요</h3>
-                                    <span class="share-card__status">
-                                        <img class="share-card__placeholder" src="{% static 'assets/img/share/placeholder.png' %}"/>흥업사거리</span>
-                                    </span>
-                                  </div>          
-                                </div>
-                                <div class="share-card__description">
-                                  <span class="share-card__description-me">#블루베리</span>
-                                  <span class="share-card__description-you">#아무거나</span>
-                                </div>
-                              </div>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="" class="share-card">
-                              <img src="{% static 'assets/img/share/7.jpg' %}" class="share-card__image" alt="" />
-                              <div class="share-card__overlay">
-                                <div class="share-card__header">
-                                  <svg class="share-card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
-                                  <img class="share-card__thumb" src="{% static 'assets/img/share/boy.png' %}" alt="" />                       
-                                  <div class="share-card__header-text">
-                                    <h3 class="share-card__title">귀여운 저를 가지실 분</h3>
-                                    <span class="share-card__status">
-                                        <img class="share-card__placeholder" src="{% static 'assets/img/share/placeholder.png' %}"/>흥업사거리</span>
-                                    </span>
-                                  </div>          
-                                </div>
-                                <div class="share-card__description">
-                                  <span class="share-card__description-me">#아무거나</span>
-                                  <span class="share-card__description-you">#아무거나</span>
-                                </div>
-                              </div>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="" class="share-card">
-                              <img src="{% static 'assets/img/share/7.jpg' %}" class="share-card__image" alt="" />
-                              <div class="share-card__overlay">
-                                <div class="share-card__header">
-                                  <svg class="share-card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
-                                  <img class="share-card__thumb" src="{% static 'assets/img/share/girl.png' %}" alt="" />                       
-                                  <div class="share-card__header-text">
-                                    <h3 class="share-card__title">양파 삼 제시@@@@@@@@</h3>
-                                    <span class="share-card__status">
-                                        <img class="share-card__placeholder" src="{% static 'assets/img/share/placeholder.png' %}"/>흥업사거리</span>
-                                    </span>
-                                  </div>          
-                                </div>
-                                <div class="share-card__description">
-                                  <span class="share-card__description-me">#아무거나</span>
-                                  <span class="share-card__description-you">#양파</span>
-                                </div>
-                              </div>
-                            </a>
-                          </li>        
-                          <li>
-                            <a href="" class="share-card">
-                              <img src="{% static 'assets/img/share/7.jpg' %}" class="share-card__image" alt="" />
-                              <div class="share-card__overlay">
-                                <div class="share-card__header">
-                                  <svg class="share-card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
-                                  <img class="share-card__thumb" src="{% static 'assets/img/share/girl.png' %}" alt="" />                       
-                                  <div class="share-card__header-text">
-                                    <h3 class="share-card__title">싹튼 감자 사실분 귀여워요</h3>
-                                    <span class="share-card__status">
-                                        <img class="share-card__placeholder" src="{% static 'assets/img/share/placeholder.png' %}"/>흥업사거리</span>
-                                    </span>
-                                  </div>
-                                </div>
-                                <div class="share-card__description">
-                                  <span class="share-card__description-me">#감자</span>
-                                  <span class="share-card__description-you">#돈</span>
-                                </div>
-                              </div>
-                            </a>
-                          </li>                
-                      </ul> -->
                       <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-center">
                           <li class="page-item">

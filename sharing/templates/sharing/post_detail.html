@@ -11,10 +11,15 @@
                             <span class="share-card__status">
                                 <img class="share-card__placeholder" src="{% static 'assets/img/share/placeholder.png' %}"/>흥업사거리</span>
                                 <br><span class="share-card__status">{{ post.created_at }}</span>
+                                
                                 <div class="share-card__description">
-                                    <span class="share-card__description-me">#포도</span>
-                                    <span class="share-card__description-you">#대파</span>
-                                  </div>
+                                  {% if post.tags.exists %}
+                                    {% for tag in post.tags.iterator %}
+                                      <span class="share-card__description-me">{{ tag }}</span>
+                                    {% endfor %}
+                                  {% endif %}
+                                  <span class="share-card__description-you">#대파</span>
+                                </div>
                                 <hr>
                                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-indicators">

@@ -140,5 +140,3 @@ MEDIA_URL = '/media/'
 MIDEA_ROOT = os.path.join(BASE_DIR, '_media')
 
 # 태그
-TAGGIT_CASE_INSENSITIVE = True
-TAGGIT_LIMIT = 50   
